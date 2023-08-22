@@ -25,7 +25,7 @@ func main() {
 	// Set path based on environment variable
 	path := os.Getenv("WEBGUI_PATH")
 	if path == "" {
-		path = "./webgui-app"
+		path = "./webgui-app/build"
 	}
 
 	http.Handle("/", createReactHandler(path))
