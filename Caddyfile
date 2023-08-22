@@ -1,0 +1,13 @@
+{
+    auto_https off  # Disable automatic HTTPS for this example; remove for production.
+}
+
+:80 {
+
+    route /webdav* {
+        uri strip_prefix /webdav
+        reverse_proxy localhost:8081
+    }
+
+    reverse_proxy localhost:8080
+}
